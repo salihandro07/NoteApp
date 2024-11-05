@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".ui.fragments.onboard.OnBoardPagerFragment">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Удобство"
+        android:textSize="28sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txt_body"
+            android:layout_marginTop="8dp"
+            android:text="Создавайте заметки в два клика! Записывайте мысли, идеи и важные задачи мгновенно."
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+</LinearLayout>
