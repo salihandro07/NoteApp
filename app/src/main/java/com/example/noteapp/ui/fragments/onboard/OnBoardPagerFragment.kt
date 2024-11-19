@@ -34,14 +34,21 @@ class OnBoardPagerFragment : Fragment() {
             0 -> {
                 txtTitle.text = "Удобство"
                 txtBody.text = "Создавайте заметки в два клика! Записывайте мысли, идеи и важные задачи мгновенно."
+                lottieAnimationView.setAnimation(R.raw.onboard1)
+                btnStart.visibility = View.INVISIBLE
+
             }
             1 -> {
                 txtTitle.text = "Организация"
                 txtBody.text = "Организуйте заметки по папкам и тегам. Легко находите нужную информацию в любое время."
+                lottieAnimationView.setAnimation(R.raw.onboard2)
+                btnStart.visibility = View.INVISIBLE
             }
             2 -> {
                 txtTitle.text = "Синхронизация"
                 txtBody.text = "Синхронизация на всех устройствах. Доступ к записям в любое время и в любом месте."
+                lottieAnimationView.setAnimation(R.raw.onboard3)
+                btnStart.visibility = View.VISIBLE
             }
         }
     }

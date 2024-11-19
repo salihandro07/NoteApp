@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentOnBoardBinding
 import com.example.noteapp.ui.adapters.OnBoardAdapter
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 
 class OnBoardFragment : Fragment() {
 
@@ -31,6 +32,7 @@ class OnBoardFragment : Fragment() {
 
     private fun initialize() {
         binding.viewpager2.adapter = OnBoardAdapter(this)
+        binding.dotsIndicator.attachTo(binding.viewpager2)
     }
 
     private fun setupListeners() = with(binding.viewpager2) {

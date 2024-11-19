@@ -50,4 +50,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation (libs.lottie)
+    implementation("com.tbuonomo:dotsindicator:5.0")
+
 }
