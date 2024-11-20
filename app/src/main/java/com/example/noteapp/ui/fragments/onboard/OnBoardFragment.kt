@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
-import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentOnBoardBinding
 import com.example.noteapp.ui.adapters.OnBoardAdapter
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 
 class OnBoardFragment : Fragment() {
 
@@ -20,7 +18,6 @@ class OnBoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentOnBoardBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         return binding.root
     }
 

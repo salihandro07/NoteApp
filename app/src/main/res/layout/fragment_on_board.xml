@@ -42,7 +42,7 @@
         app:dampingRatio="0.5"
         app:selectedDotColor="#D88B02"
         app:dotsColor="#C4C4C4"
-        app:dotsCornerRadius="6dp"
+        app:dotsCornerRadius="100dp"
         app:dotsSize="16dp"
         app:dotsSpacing="6dp"
         app:dotsStrokeWidth="2dp"
