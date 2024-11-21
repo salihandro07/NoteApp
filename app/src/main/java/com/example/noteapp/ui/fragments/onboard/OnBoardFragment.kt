@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.noteapp.databinding.FragmentOnBoardBinding
 import com.example.noteapp.ui.adapters.OnBoardAdapter
@@ -43,7 +44,7 @@ class OnBoardFragment : Fragment() {
                     binding.txtSkip.setOnClickListener {
                         if(currentItem < 3){
                             setCurrentItem(currentItem + 2, true)
-                        }
+                       }
                     }
                 }
             }

@@ -26,7 +26,6 @@ class NoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupListeners()
-
     }
 
     private fun setupListeners() = with(binding) {

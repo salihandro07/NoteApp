@@ -5,10 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.example.noteapp.R
 import com.example.noteapp.databinding.ActivityMainBinding
 import com.example.noteapp.databinding.FragmentOnBoardBinding
 import com.example.noteapp.databinding.FragmentOnBoardPagerBinding
+import com.example.noteapp.utils.PreferenceHelper
+import com.google.android.material.button.MaterialButton
 
 
 class OnBoardPagerFragment : Fragment() {
@@ -20,7 +24,6 @@ class OnBoardPagerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View{
         binding = FragmentOnBoardPagerBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         return binding.root
     }
 
@@ -30,6 +33,12 @@ class OnBoardPagerFragment : Fragment() {
     }
 
     private fun initialize() = with(binding) {
+        val sharedPreferences = PreferenceHelper()
+        sharedPreferences.unit(requireContext())
+        btnStart.setOnClickListener {
+            findNavController().navigate(R.id.action_onBoardFragment_to_noteFragment)
+            sharedPreferences.isOnBoardShown = true
+        }
         when(requireArguments().getInt(ARG_ONBOARD_POSITION)){
             0 -> {
                 txtTitle.text = "Удобство"

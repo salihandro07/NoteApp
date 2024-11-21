@@ -15,4 +15,8 @@ class PreferenceHelper {
         get() = sharedPreferences.getString("text", "")
         set(value) = sharedPreferences.edit()?.putString("text", value)!!.apply()
 
+
+    var isOnBoardShown: Boolean
+        get() = sharedPreferences.getBoolean("board", false)
+        set(value) = sharedPreferences.edit()?.putBoolean("board", value)!!.apply()
 }

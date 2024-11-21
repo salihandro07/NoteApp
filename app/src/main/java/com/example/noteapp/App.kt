@@ -8,6 +8,5 @@ class App: Application() {
         super.onCreate()
         val sharedPreferences = PreferenceHelper()
         sharedPreferences.unit(this)
-
     }
 }
