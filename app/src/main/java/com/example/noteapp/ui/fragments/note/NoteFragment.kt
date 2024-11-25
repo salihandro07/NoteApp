@@ -7,13 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.noteapp.App
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentNoteBinding
+import com.example.noteapp.ui.adapters.NoteAdapter
 import com.example.noteapp.utils.PreferenceHelper
 
 class NoteFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteBinding
+    private val noteAdapter = NoteAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,26 +30,26 @@ class NoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupListeners()
+        initialize()
+        getData()
     }
 
     private fun setupListeners() = with(binding) {
-        val sharedPreferences = PreferenceHelper()
-        sharedPreferences.unit(requireContext())
-        //btnSave.setOnClickListener{
-            //var et = etText.text.toString()
-            //txtMain.text = et
-        //}
-        //txtMain.text = sharedPreferences.text
+        btnAction.setOnClickListener {
+            findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment)
+        }
+    }
 
-        //.setOnClickListener{
-            ///findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment, null,
-                // {
-                    //anim {
-                        //enter = R.anim.slide_in_right
-                        //exit = R.anim.slide_out_left
-                    //}
-                //}
-           //)
-        //}
+    private fun initialize() {
+        binding.rvNote.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = noteAdapter
+        }
+    }
+
+    private fun getData() {
+        App.appDatabase?.noteDao()?.getAll()?.observe(viewLifecycleOwner){item ->
+            noteAdapter.submitList(item)
+        }
     }
 }
