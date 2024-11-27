@@ -11,20 +11,26 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_note"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat = "@android:drawable/ic_input_add"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="36dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    <EditText
+        android:layout_marginTop="16dp"
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/et_search"
+        android:hint="Поиск заметок"
+        android:padding="15dp"
+        android:paddingHorizontal="25dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
 
-
-    
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -61,25 +67,19 @@
             android:src="@drawable/ic_grid" />
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.fragment.app.FragmentContainerView
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
         android:id="@+id/btn_action"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#0E0C0C"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_btn_add"
+        android:foreground="@drawable/baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="1.0"
+        android:foregroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteX="0dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="90dp"
-        android:background="@drawable/ic_search"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="45dp"
-        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
