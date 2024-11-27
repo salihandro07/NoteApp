@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <Button
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,6 +38,7 @@
 
         <TextView
             android:id="@+id/tv_time"
+            android:layout_marginStart="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -62,7 +63,8 @@
 
     <EditText
         android:id="@+id/et_title"
-        android:text="Title"
+        android:hint="Title"
+        android:textColorHint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -75,7 +77,8 @@
         android:backgroundTint="#0E0C0C"/>
 
     <EditText
-        android:text="Text"
+        android:hint="Text"
+        android:textColorHint="@color/white"
         android:id="@+id/et_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
