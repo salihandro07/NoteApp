@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.navOptions
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.noteapp.App
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentNoteBinding
 import com.example.noteapp.ui.adapters.NoteAdapter
-import com.example.noteapp.utils.PreferenceHelper
 
 class NoteFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteBinding
-    private val noteAdapter = NoteAdapter()
+    private val noteAdapter = NoteAdapter(false)
+    private var isLinearLayout = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +37,19 @@ class NoteFragment : Fragment() {
     private fun setupListeners() = with(binding) {
         btnAction.setOnClickListener {
             findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment)
+        }
+
+        btnChangeLayout.setOnClickListener {
+            if(isLinearLayout){
+                binding.rvNote.layoutManager = GridLayoutManager(requireContext(), 2)
+                noteAdapter.setLayoutType(true)
+                btnChangeLayout.setBackgroundResource(R.drawable.baseline_format_list_bulleted_24)
+            }else{
+                binding.rvNote.layoutManager = LinearLayoutManager(requireContext())
+                noteAdapter.setLayoutType(false)
+                btnChangeLayout.setBackgroundResource(R.drawable.baseline_dashboard_24)
+            }
+            isLinearLayout = !isLinearLayout
         }
     }
 

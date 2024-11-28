@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
@@ -47,24 +48,31 @@
             android:textSize="14dp"
             android:textStyle="bold" />
 
-        <Button
+        <TextView
+            android:layout_marginEnd="20dp"
             android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginEnd="24dp"
             android:backgroundTint="#0E0C0C"
             android:text="Готово"
             android:textColor="#D88B02"
             android:textSize="15sp"
             android:textStyle="bold" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_color"
+            android:background="@drawable/baseline_color_lens_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"/>
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
         android:id="@+id/et_title"
         android:hint="Title"
-        android:textColorHint="@color/white"
+        android:textColorHint="#CCCCCC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -78,7 +86,7 @@
 
     <EditText
         android:hint="Text"
-        android:textColorHint="@color/white"
+        android:textColorHint="#cccccc"
         android:id="@+id/et_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

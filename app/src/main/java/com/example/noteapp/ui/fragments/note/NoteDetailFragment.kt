@@ -37,6 +37,8 @@ class NoteDetailFragment : Fragment() {
     }
 
     private fun setupListeners() = with(binding) {
+
+
         btnSave.setOnClickListener{
             val etTitle = etTitle.text.toString().trim()
             val etDescription = etDescription.text.toString().trim()
@@ -49,12 +51,19 @@ class NoteDetailFragment : Fragment() {
         }
     }
 
-    private fun initialize() {
-        binding.tvDate.apply {
-            binding.tvDate.text = noteDate
+    private fun initialize() = with(binding) {
+        tvDate.apply {
+            tvDate.text = noteDate
         }
-        binding.tvTime.apply {
-            binding.tvTime.text = noteTime
+        tvTime.apply {
+            tvTime.text = noteTime
+        }
+        if(etTitle.text.toString().isEmpty() && etDescription.text.toString().isEmpty()){
+            btnSave.visibility = View.GONE
+        }
+        else{
+            btnSave.visibility = View.VISIBLE
         }
     }
+
 }
