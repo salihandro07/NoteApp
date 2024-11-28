@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.data.models.NoteModel
 import com.example.noteapp.databinding.ItemNoteBinding
 
-class NoteAdapter: ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DIffCallback()) {
+class NoteAdapter(
+    var isGridLayout: Boolean
+): ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DIffCallback()) {
     class ViewHolder(private val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: NoteModel) {
             binding.txtTitleNote.text = item.title
@@ -20,6 +22,11 @@ class NoteAdapter: ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DIffCallback()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position))
+        if (isGridLayout) {
+            holder.itemView.layoutParams.height = 250
+        } else {
+            holder.itemView.layoutParams.height = 150
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,5 +43,9 @@ class NoteAdapter: ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DIffCallback()
         override fun areContentsTheSame(oldItem: NoteModel, newItem: NoteModel): Boolean {
             return oldItem == newItem
         }
+    }
+
+    fun setLayoutType(isGridLayout: Boolean){
+        this.isGridLayout = isGridLayout
     }
 }
